@@ -52,7 +52,7 @@
             <div class="form-group row">
                 <label for="Author" class="col-sm-2 col-form-label">Author</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="author" placeholder="Author">
+                    <input type="text" class="form-control" id="author" placeholder="Author">
                 </div>
             </div>
             <fieldset class="form-group">
@@ -82,17 +82,7 @@
                     </div>
                 </div>
             </fieldset>
-            <div class="form-group row">
-                <div class="col-sm-2">Checkbox</div>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                            Example checkbox
-                        </label>
-                    </div>
-                </div>
-            </div>
+
             <div class="form-group row">
                 <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Add Book</button>
@@ -107,20 +97,20 @@
                 <h1>Your books</h1>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Name</th>
                         <th scope="col">Author</th>
                         <th scope="col">Type</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tableBody">
                     <tr>
-                        <th scope="row">1</th>
+
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>
