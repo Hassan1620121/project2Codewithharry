@@ -1,52 +1,40 @@
-console.log("This is index.js");
-//To dos
-
-// store all the data to thelocal Storage
-// 2. given antoher column as an  option to delete the book 
-// Add a scrollbar 
-
-
-
-//constructor
-function Book(nam, author, type) {
-    this.nam = nam;
-    this.author = author;
-    this.type = type;
+console.log("This is ES6 version of project 2");
+class Book {
+    constructor(nam, author, type) {
+        this.nam = nam;
+        this.author = author;
+        this.type = type;
+    }
 }
 
-//Display Constructor
-function Display() { }
-
-//Add methods to display prototype
-Display.prototype.add = function (book) {
-    console.log("adding to ui");
-    tableBody = document.getElementById("tableBody");
-    let uiString = ` <tr>
-
-                    <td>${book.nam}</td>
-                    <td>${book.author}</td>
-                    <td>${book.type}</td>
-                    </tr>`;
-    tableBody.innerHTML += uiString;
-};
-
-//Implementing the clear funciton
-Display.prototype.clear = function () {
-    let libraryForm = document.getElementById("libraryForm");
-    libraryForm.reset();
-};
-
-//Implementing the validate funciton
-
-Display.prototype.validate = function (book) {
-    if (book.nam.length < 2 || book.author.length < 2) {
-        return false;
-    } else {
-        return true;
+class Display{
+    add(book) {
+        console.log("adding to ui");
+        let tableBody = document.getElementById("tableBody");
+        let uiString = ` <tr>
+    
+                        <td>${book.nam}</td>
+                        <td>${book.author}</td>
+                        <td>${book.type}</td>
+                        </tr>`;
+        tableBody.innerHTML += uiString;
     }
-};
-//Implementing the show function
-Display.prototype.show = function (type, displayMessage) {
+
+    clear() {
+        let libraryForm = document.getElementById("libraryForm");
+        libraryForm.reset();
+    }
+
+
+    validate(book) {
+        if (book.nam.length < 2 || book.author.length < 2) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    show(type, displayMessage) {
     let message = document.getElementById("message");
     message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
                             <strong>Message:</strong>${displayMessage} .
@@ -57,8 +45,9 @@ Display.prototype.show = function (type, displayMessage) {
     setTimeout(function () {
         message.innerHTML = "";
     }, 2000);
-};
-//Add Submit event Listener to form
+}
+}
+
 
 let libraryForm = document.getElementById("libraryForm");
 libraryForm.addEventListener("submit", libraryFormSubmit);
@@ -96,3 +85,7 @@ function libraryFormSubmit(e) {
     }
     e.preventDefault();
 }
+
+
+
+
